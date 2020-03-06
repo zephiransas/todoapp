@@ -1,0 +1,12 @@
+os: linux
+version: 0.0
+files:
+- source: /
+  destination: /data/todoapp/
+#hooks:
+#  ApplicationStop:
+#  - location: hooks/stop.sh
+#    runas: root
+#  ApplicationStart:
+#  - location: hooks/start.sh
+#    runas: root
