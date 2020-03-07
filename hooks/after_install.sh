@@ -2,4 +2,5 @@
 
 cd /data/todoapp
 bundle config set without 'development test'
-bundle install
+bundle install --path vendor/bundle
+bundle exec rake assets:precompile
