@@ -3,6 +3,13 @@ version: 0.0
 files:
 - source: /
   destination: /data/todoapp/
+permissions:
+  - object: /data/todoapp
+    type:
+      - file
+      - directory
+    owner: ec2-user
+    group: ec2-user
 hooks:
   AfterInstall:
     - location: hooks/after_install.sh
