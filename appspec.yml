@@ -13,7 +13,7 @@ permissions:
 hooks:
   AfterInstall:
     - location: hooks/after_install.sh
-      runas: root
+#      runas: root
 #  ApplicationStop:
 #  - location: hooks/stop.sh
 #    runas: root
