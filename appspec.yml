@@ -4,7 +4,7 @@ files:
 - source: /
   destination: /data/todoapp/
 permissions:
-  - object: /data/todoapp
+  - object: /data
     type:
       - file
       - directory
@@ -13,7 +13,7 @@ permissions:
 hooks:
   AfterInstall:
     - location: hooks/after_install.sh
-#      runas: root
+      runas: ec2-user
 #  ApplicationStop:
 #  - location: hooks/stop.sh
 #    runas: root
