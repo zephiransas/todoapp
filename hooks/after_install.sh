@@ -3,4 +3,5 @@
 cd /data/todoapp
 bundle config set without 'development test'
 bundle install
-bundle exec rake assets:precompile
+yarn install
+RAILS_ENV=production bundle exec rake assets:precompile
