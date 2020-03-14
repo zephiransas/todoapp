@@ -12,4 +12,4 @@ bundle config set without 'development test'
 bundle install
 yarn install
 RAILS_ENV=production bundle exec rake assets:precompile
-RAILS_ENV=production bundle exec rails s
+RAILS_ENV=production bundle exec rails s -d
