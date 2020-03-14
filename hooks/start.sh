@@ -8,7 +8,4 @@ export RDS_PORT=$(aws --region ap-northeast-1 ssm get-parameter --name '/Todoapp
 export RAILS_MASTER_KEY=$(aws --region ap-northeast-1 ssm get-parameter --name '/Todoapp/RAILS_MASTER_KEY' | jq -r '.Parameter.Value')
 
 cd /data/todoapp
-bundle config set without 'development test'
-bundle install
-yarn install
-RAILS_ENV=production bundle exec rake assets:precompile
+RAILS_ENV=production bundle exec rails s -d

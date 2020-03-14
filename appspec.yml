@@ -11,15 +11,15 @@ permissions:
     owner: ec2-user
     group: ec2-user
 hooks:
-#  BeforeInstall:
-#    - location: hooks/before_install.sh
-#      runas: ec2-user
+  ApplicationStop:
+    - location: hooks/stop.sh
+      runas: root
+  BeforeInstall:
+    - location: hooks/before_install.sh
+      runas: root
   AfterInstall:
     - location: hooks/after_install.sh
       runas: ec2-user
-#  ApplicationStop:
-#  - location: hooks/stop.sh
-#    runas: root
-#  ApplicationStart:
-#  - location: hooks/start.sh
-#    runas: root
+  ApplicationStart:
+  - location: hooks/start.sh
+    runas: ec2-user
