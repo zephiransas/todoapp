@@ -21,5 +21,5 @@ hooks:
     - location: hooks/after_install.sh
       runas: ec2-user
   ApplicationStart:
-  - location: hooks/start.sh
-    runas: ec2-user
+    - location: hooks/start.sh
+      runas: ec2-user
