@@ -19,7 +19,7 @@ end
 
 def register_revision(dist_zip)
 
-  s3_bucket = "todoapp-codedeploy-bucket"
+  s3_bucket = "todoapp-stg-revisions"
 
   puts "Uploading dist zip"
   Aws::S3::Resource.new.bucket(s3_bucket).object(dist_zip).upload_file(dist_zip)
@@ -33,7 +33,7 @@ def register_revision(dist_zip)
       }
   }
   puts "register revision #{revision}"
-  Aws::CodeDeploy::Client.new.register_application_revision(application_name: "todoapp", revision: revision)
+  Aws::CodeDeploy::Client.new.register_application_revision(application_name: "todoapp-stg-app", revision: revision)
 
   revision
 end
