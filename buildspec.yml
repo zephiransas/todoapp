@@ -1,0 +1,14 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - gem install bundler -v 2.1.4
+      - bundle install --path vendor/bundle
+  build:
+    commands:
+      - bundle exec rspec
+
+cache:
+  paths:
+    - 'vendor/bundle'
