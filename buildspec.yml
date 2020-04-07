@@ -1,12 +1,10 @@
 version: 0.2
 
 phases:
-  pre_build:
+  install:
     commands:
       - apt-get -y update && apt-get -y install docker.io
       - service docker start
-  install:
-    commands:
       - docker run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=todo mysql:5.7.22
       - mysql -h 127.0.0.1 -u root -ptodo < docker/initdb/setup.sql
       - gem install bundler -v 2.1.4
