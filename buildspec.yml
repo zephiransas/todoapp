@@ -8,6 +8,7 @@ phases:
       - timeout 15 sh -c "until docker info; do echo .; sleep 1; done"
       - docker run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=todo mysql:5.7.22
       - apt-get -y install mariadb-client
+      - timeout 15 sh -c "until mysql -h 127.0.0.1 -u root -ptodo; do echo .; sleep 1; done"
       - mysql -h 127.0.0.1 -u root -ptodo < docker/initdb/setup.sql
       - gem install bundler -v 2.1.4
       - bundle install --path vendor/bundle
