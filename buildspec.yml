@@ -27,6 +27,10 @@ phases:
     commands:
       - bundle exec rspec
 
+  post_build:
+    commands:
+      - aws s3 cp Gemfile s3://todoapp-stg-artifacts
+      - aws s3 cp Gemfile.lock s3://todoapp-stg-artifacts
 
 cache:
   paths:
