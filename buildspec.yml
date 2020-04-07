@@ -12,6 +12,7 @@ phases:
       - mysql -h 127.0.0.1 -u root -ptodo < docker/initdb/setup.sql
       - gem install bundler -v 2.1.4
       - bundle install --path vendor/bundle
+      - bundle exec rake db:create
   build:
     commands:
       - bundle exec rspec
