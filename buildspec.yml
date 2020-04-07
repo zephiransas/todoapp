@@ -1,6 +1,10 @@
 version: 0.2
 
 phases:
+  pre_build:
+    commands:
+      - apt-get -y update && apt-get -y install docker.io
+      - service docker start
   install:
     commands:
       - gem install bundler -v 2.1.4
